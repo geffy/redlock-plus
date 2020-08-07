@@ -4,6 +4,13 @@
 Redlock+
 ========
 
+.. image:: https://img.shields.io/pypi/implementation/redlock-plus?style=flat-square
+  :target: https://pypi.org/project/redlock-plus/
+.. image:: https://img.shields.io/pypi/pyversions/redlock-plus?style=flat-square
+  :target: https://pypi.org/project/redlock-plus/
+.. image:: https://github.com/provinzkraut/redlock-plus/workflows/Tests/badge.svg
+  :target: https://github.com/provinzkraut/redlock-plus/actions?query=workflow%3ATests
+
 Redlock+ is an up to date, feature complete implementation of the `Redlock Algorithm`_
 It's a spiritual successor to `glasslion/redlock <https://github.com/glasslion/redlock>`_, which is no longer maintained.
 
@@ -19,10 +26,16 @@ Features
 - Type hinted
 
 
+Documentation
+=============
+
+https://redlock-plus.readthedocs.io/en/latest/
+
+
 Installation
 ============
 
-Redlock+ is available on PyPi:
+Redlock+ is available on `PyPi <https://pypi.org/project/redlock-plus/>`_:
 
 .. code-block:: bash
 
