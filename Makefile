@@ -18,4 +18,4 @@ coverage:
 	coverage html
 
 docs:
-	sphinx-build -b html docs/source docs/build
+	sphinx-build -b html docs docs/build
