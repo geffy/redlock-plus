@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "redlock-plus"
+version = "0.1.4"
+description = "Distributed locks with Redis"
+authors = [
+  "Janek Nouvertné <provinzkraut@posteo.de>",
+  "Leonardo Zhou <glasslion@gmail.com>",
+]
+license = "MIT"
+readme = "README.rst"
+homepage = "https://github.com/provinzkraut/redlock-plus"
+repository = "https://github.com/provinzkraut/redlock-plus"
+keywords = ["redlock", "redis", "lock", "distributed"]
+classifiers = [
+  'Development Status :: 5 - Production/Stable',
+  'Intended Audience :: Developers',
+  'License :: OSI Approved :: MIT License',
+  'Programming Language :: Python :: 3.6',
+  'Programming Language :: Python :: 3.7',
+  'Programming Language :: Python :: 3.8',
+  'Programming Language :: Python :: Implementation :: CPython',
+  'Programming Language :: Python :: Implementation :: PyPy'
+]
+packages = [
+  { include = "redlock_plus.py" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+redis = "^3.5.3"
+importlib-metadata = {version = "^1.0", python = "<3.8"}
+
+[tool.poetry.dev-dependencies]
+pytest = "^6"
+black = {version = "^19.10b0", markers = "platform_python_implementation == 'CPython'"}
+flake8 = "^3.8.3"
+coverage = "^5.2"
+fakeredis = "^1.4.1"
+lupa = "^1.9"
+sphinx = "^3.1.2"
+pytest-mock = "^3.2.0"
+pytest-cov = "^2.10.0"
+mypy = {version = "^0.782", markers = "platform_python_implementation == 'CPython'"}
+pylint = {version = "^2.5.3",  markers = "platform_python_implementation == 'CPython'"}
+sphinx-autodoc-typehints = {version = "^1.11.0",  markers = "platform_python_implementation == 'CPython'"}
+twine = "^3.2.0"
+
+[tool.pytest.ini_options]
+console_output_style = "count"
+markers = [
+  "slow: this test is slow",
+  "py_version: run only if the version requirements are met"
+  ]
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

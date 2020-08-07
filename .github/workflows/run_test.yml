@@ -1,0 +1,35 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+
+  test:
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, pypy3]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry
+        uses: dschep/install-poetry-action@v1.2
+
+      - name: Install Dependencies
+        run: poetry install
+
+      - name: Lint
+        if: matrix.python-version != 'pypy3'
+        run: |
+            poetry run black redlock_plus.py tests --check
+            poetry run mypy redlock_plus.py
+            poetry run flake8 redlock_plus.py tests
+            poetry run pylint redlock_plus.py
+
+      - name: Run tests
+        run: poetry run pytest
