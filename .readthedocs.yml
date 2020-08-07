@@ -1,6 +1,13 @@
 version: 2
 
+sphinx:
+  builder: html
+  configuration: docs/conf.py
+
 python:
-   install:
-     - method: pip
-       path: .
+  version: 3.7
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
