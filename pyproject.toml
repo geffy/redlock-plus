@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "redlock-plus"
-version = "0.1.4"
+version = "0.1.5"
 description = "Distributed locks with Redis"
 authors = [
   "Janek Nouvertné <provinzkraut@posteo.de>",
@@ -10,6 +10,7 @@ license = "MIT"
 readme = "README.rst"
 homepage = "https://github.com/provinzkraut/redlock-plus"
 repository = "https://github.com/provinzkraut/redlock-plus"
+documentation = "https://redlock-plus.readthedocs.io/en/latest/"
 keywords = ["redlock", "redis", "lock", "distributed"]
 classifiers = [
   'Development Status :: 5 - Production/Stable',
